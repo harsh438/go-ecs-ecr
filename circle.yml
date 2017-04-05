@@ -9,7 +9,7 @@ dependencies:
 test:
   post:
     - docker run --log-driver=splunk --log-opt F682BE74-4471-5496-A67D-699427B0F670 --log-opt splunk-url=https://http-inputssurfdome.splunkcloud.com/services/collector/event -d -p 8080:8080 --name sample-go-webapp $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/cfn-demo1:latest; sleep 10
-    - curl --retry 10 --retry-delay 5 localhost:8080 | grep "Hello World!!!!!"
+    - curl --retry 10 --retry-delay 5 localhost:8080 | grep "Hello World"
 
 deployment:
   prod:
